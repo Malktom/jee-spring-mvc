@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import java.util.Random;
 
 @Controller
-public class RandomController {
+public class ShowRandomController {
     @GetMapping("/show-random")
     @ResponseBody
     public String getRandom() {
