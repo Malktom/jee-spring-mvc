@@ -19,7 +19,7 @@ import java.util.List;
 @ComponentScan(basePackages = "pl.coderslab")
 public class AppConfig implements WebMvcConfigurer {
 
-    @Override
+    @Override // zmiana kodowania na UTF dla calej aplikacji - nie trzeba -> @RequestMapping(value = "/response-encoding", produces = "text/plain;charset=UTF-8")
     public void configureMessageConverters(List<HttpMessageConverter<?>> converters) {
         StringHttpMessageConverter stringConverter = new StringHttpMessageConverter();
         stringConverter.setSupportedMediaTypes(Arrays.asList(new MediaType("text", "plain",

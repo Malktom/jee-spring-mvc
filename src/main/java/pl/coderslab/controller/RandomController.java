@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import java.util.Random;
 
 @Controller
-public class Randomcontroller {
+public class RandomController {
 
     @GetMapping("random/{max}")
     @ResponseBody

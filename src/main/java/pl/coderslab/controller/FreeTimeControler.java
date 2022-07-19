@@ -14,16 +14,23 @@ public class FreeTimeControler {
     @GetMapping("date")
     @ResponseBody
     public String getDate() {
-        LocalDateTime date = LocalDateTime.now();
+//        LocalDateTime date = LocalDateTime.now();
+        LocalDateTime date2 = LocalDateTime.of(2022, 7, 15, 16, 13);
+        String dayOfWeek = String.valueOf(date2.getDayOfWeek());
+        int hour = date2.getHour();
 
 
-        if (date.getDayOfWeek().equals("SUNDAY") || date.getDayOfWeek().equals("SATURDAY")) {
-            return "Wolne" + date.getDayOfWeek() + " " + date.getHour();
+//        Aby przetestować działanie aplikacji, możesz zamiast aktualnej daty,
+//        pobrać wybraną przez siebie datę i godzinę.
+//        LocalDateTime date = LocalDateTime.of(2022, 8, 11, 18, 13);
 
-        } else if (date.getHour() > 9 && date.getHour() < 17) {
-            return "Pracuje, nie dzwoń " + date.getDayOfWeek() + " " + date.getHour();
+        if (dayOfWeek.equals("SUNDAY") || dayOfWeek.equals("SATURDAY")) {
+            return "Wolne " + dayOfWeek+ " " + hour;
+
+        } else if (hour >= 9 && hour<=17)  {
+            return "Pracuje, nie dzwoń " +dayOfWeek+ " " + hour;
         }
-        return " po pracy " + date.getDayOfWeek() + " " + date.getHour();
+        return " po pracy " + dayOfWeek+ " " + hour;
     }
 
 }

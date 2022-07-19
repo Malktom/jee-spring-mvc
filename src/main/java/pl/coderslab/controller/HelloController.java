@@ -20,21 +20,22 @@ public class HelloController {
 
     @GetMapping("helloView")
     public String helloView(Model model) {
-        LocalTime now = LocalTime.now();
-//        LocalTime now = LocalTime.of(21,0);
+//        LocalTime now = LocalTime.now();
+        LocalTime now = LocalTime.of(21,0);
         String color, backgroundColor;
 
         if (now.isAfter(of(8, 0)) && now.isBefore(of(20, 0))) {  // import static
-            color = "black";
-            backgroundColor = "white";
-        } else {
             color = "white";
             backgroundColor = "black";
+
+        } else {
+            color = "black";
+            backgroundColor = "white";
         }
 
-//
-//        model.addAttribute("color", "yellow");
-//        model.addAttribute("backgroundColor", "red");
+        model.addAttribute("color", color);
+        model.addAttribute("backgroundColor", backgroundColor);
         return "home";
     }
+
 }
