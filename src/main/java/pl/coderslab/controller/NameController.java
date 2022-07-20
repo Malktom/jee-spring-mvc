@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class NameController {
+
     @GetMapping("hello/{firstName}/{lastName}")
     @ResponseBody
     public String showName(@PathVariable("firstName") String firstName,
